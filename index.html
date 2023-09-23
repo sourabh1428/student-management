@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="nav-bar">Student portal</div>
+    <div id="search-bar">
+        <input id="input-search" value="" type="text" placeholder="Search">
+        <button id="btn-search" onclick="searchFirst()">Search</button>
+    </div>
+    <div class="btn-list">
+        <button onclick="sortAZ()">Sort A->Z</button>
+        <button onclick="sortZA()">Sort Z->A</button>
+        <button onclick="sortMarks()">Sort By Marks</button>
+        <button onclick="sortPass()">Sort by Passsing </button>
+        <button onclick="sortClass()">Sort by Class</button>
+        <button onclick="sortGender()">Sort by Gender</button>
+
+    </div>
+
+    <section id="sec">
+        <table id="my-table">
+            <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Class</th>
+            <th>Marks</th>
+            <th>Passing</th>
+            <th>Email</th>
+        </tr>
+        
+           
+            <!-- <td>1</td>
+            <td>Sourabh</td>
+            <td>Male</td>
+            <td>12</td>
+            <td>90</td>
+            <td>Passing</td>
+            <td>sppatrhak1428@gmail.com</td> -->
+
+        
+        </table>
+
+
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
