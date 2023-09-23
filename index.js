@@ -1255,7 +1255,11 @@ let search=document.getElementById("input-search");
         c = c.toLowerCase().replace(/ /g, ""); // Convert to lowercase and remove spaces
         
         let k = huehue(c);
-
+        function removeDuplicates(arr) {
+          return arr.filter((item,
+              index) => arr.indexOf(item) === index);
+      }
+       k= removeDuplicates(k);
 
         let j = [];
         for (let i = 0; i < k.length; i++) {
@@ -1280,6 +1284,25 @@ let search=document.getElementById("input-search");
         tbo1.innerHTML=tbo2.innerHTML; // Append the new tbody
     }
     
+    function checkElmenet(arr1,x){
+      let l=0;
+      let r=arr1.length-1;
+      arr1.sort();
+      console.log(arr1);
+      //applying binary search function      
+      while(l<r){
+        let mid=(l+r)/2;
+        if(x<arr1[mid]){
+          r=mid-1;;
+        }
+        else if(arr1[mid]==x){return true;}
+        else{
+          l=mid+1;
+        }
+      }
+      return false;
+    }
+
     function huehue(c) {
         let ans2 = [];
     
@@ -1287,9 +1310,10 @@ let search=document.getElementById("input-search");
         
         for (let i = 0; i < arr.length; i++) {
             let yo = arr[i].first_name.toLowerCase() + arr[i].last_name.toLowerCase();
-            if (yo.includes(c)) {
+            if (yo.includes(c) && checkElmenet(ans2,i)==false) {
               
                 ans2.push(i);
+            
             }
         }
     
